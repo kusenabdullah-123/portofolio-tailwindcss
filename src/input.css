@@ -3,12 +3,11 @@
 @tailwind utilities;
 
 .navbar-fixed {
-  @apply fixed z-[999] bg-white bg-opacity-75;
-  backdrop-filter: blur(5px);
+  @apply fixed z-[999] bg-white bg-opacity-75 backdrop-blur-sm dark:bg-dark dark:opacity-50;
   box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.2);
 }
 .hamburger-line {
-  @apply my-2 block h-[2px] w-[30px] bg-dark;
+  @apply my-2 block h-[2px] w-[30px] bg-dark dark:bg-white;
 }
 .hamburger-transision {
   @apply transition duration-300 ease-in-out;
@@ -22,4 +21,12 @@
 }
 .hamburger-active > span:nth-child(3) {
   @apply -rotate-45;
+}
+
+#dark-toogle:checked ~ label div.toogle-circle {
+  @apply translate-x-3;
+}
+
+.paginate-active {
+  @apply bg-primary text-white;
 }

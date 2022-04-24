@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KusenaDev Portofolio</title>
+    <link rel="stylesheet" href="dist/style.css" />
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body class="relative">
+    <!-- Header Start -->
+    <header
+      class="absolute top-0 left-0 z-10 flex w-full items-center bg-transparent"
+    >
+      <div class="container">
+        <div class="relative flex items-center justify-between">
+          <div class="px-4">
+            <a href="index.html" class="block py-6 text-lg font-bold text-primary"
+              >Kusena Dev
+            </a>
+          </div>
+          <div class="flex items-center">
+            <button
+              id="hamburger"
+              name="hamburger"
+              type="button"
+              class="absolute right-4 block lg:hidden"
+            >
+              <span
+                class="hamburger-line hamburger-transision origin-top-left"
+              ></span>
+              <span class="hamburger-line hamburger-transision"></span>
+              <span
+                class="hamburger-line hamburger-transision origin-bottom-left"
+              ></span>
+            </button>
+
+            <nav
+              id="nav-menu"
+              class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg dark:bg-dark dark:shadow-md dark:shadow-slate-300 lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none lg:dark:bg-transparent lg:dark:shadow-none"
+            >
+              <ul class="block lg:flex">
+                <li class="group">
+                  <a
+                    href="index.html"
+                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
+                    >Home</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#home"
+                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
+                    >About</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#home"
+                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
+                    >Portofolio</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="blog.html"
+                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
+                    >Blog</a
+                  >
+                </li>
+                <li class="mt-3 flex items-center pl-9 lg:mt-0">
+                  <div class="flex">
+                    <span class="mr-2 text-sm text-slate-500"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"><path fill="#1d4ed8" d="M256 104c-83.813 0-152 68.187-152 152s68.187 152 152 152s152-68.187 152-152s-68.187-152-152-152Zm0 272a120 120 0 1 1 120-120a120.136 120.136 0 0 1-120 120ZM240 16h32v48h-32zm0 432h32v48h-32zm208-208h48v32h-48zm-432 0h48v32H16zm372.687 171.314l22.627-22.627l32 32l-22.627 22.627zm-320-320l22.628-22.628l32 32l-22.628 22.628zm-.002 329.375l32-32l22.628 22.626l-32 32zm320.002-320.003l32-32l22.628 22.628l-32 32z"/></svg></span>
+                    <input type="checkbox" class="hidden" id="dark-toogle" />
+                    <label for="dark-toogle">
+                      <div
+                        class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1"
+                      >
+                        <div
+                          class="toogle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out"
+                        ></div>
+                      </div>
+                    </label>
+                    <span class="ml-2 text-sm text-slate-500"></span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                        role="img"
+                        width="20"
+                        height="20"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill="#1d4ed8"
+                          d="M6 .278a.768.768 0 0 1 .08.858a7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277c.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316a.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71C0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29c0-1.167.242-2.278.681-3.286z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+    <!-- blog Section Start -->
+    <section class="pt-36 dark:bg-dark" id="home">
+      <div class="container">
+        <h1 class="mb-4 text-center text-5xl font-bold uppercase text-primary">
+          BLog
+        </h1>
+        <section
+          class="mx-auto mb-5 flex max-w-xl flex-row md:max-w-4xl lg:max-w-7xl"
+        >
+          <div
+            class="article-blog flex basis-full flex-col md:basis-3/4 lg:basis-3/4"
+          >
+            <article
+              class="mb-5 flex max-h-max flex-col md:flex-row lg:flex-row"
+            >
+              <div class="left basis-1/4 px-4 text-left">
+                <div class="pb-9 dark:text-white">
+                  <a href="#">Food,</a>
+                  <a class="active" href="#">Technology,</a>
+                  <a href="#">Politics,</a>
+                  <a href="#">Lifestyle</a>
+                </div>
+                <ul class="blog_meta list">
+                  <li>
+                    <a
+                      href="#"
+                      class="flex items-center py-2 text-sm text-gray-500 dark:text-white"
+                      >Mark wiens
+                      <span id="icon-blog" class="inline-block pl-3"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                          role="img"
+                          style="vertical-align: -0.125em"
+                          width="30"
+                          height="30"
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 1024 1024"
+                        >
+                          <path
+                            fill="black"
+                            d="M858.5 763.6a374 374 0 0 0-80.6-119.5a375.63 375.63 0 0 0-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1c-.4.2-.8.3-1.2.5c-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 0 0-80.6 119.5A371.7 371.7 0 0 0 136 901.8a8 8 0 0 0 8 8.2h60c4.4 0 7.9-3.5 8-7.8c2-77.2 33-149.5 87.8-204.3c56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 0 0 8-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z"
+                          /></svg></span
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="flex items-center py-2 text-sm text-gray-500 dark:text-white"
+                      >12 Dec, 2017
+                      <span id="icon-blog" class="inline-block pl-3"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                          role="img"
+                          style="vertical-align: -0.125em"
+                          width="30"
+                          height="30"
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 16 16"
+                        >
+                          <g fill="black">
+                            <path
+                              d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406c1.258 0 2-1.066 2-2.871c0-1.934-.781-2.668-1.953-2.668c-.926 0-1.797.672-1.797 1.809c0 1.16.824 1.77 1.676 1.77c.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164c-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18c-.601 0-1.144-.383-1.144-1.2c0-.823.582-1.21 1.168-1.21c.633 0 1.16.398 1.16 1.23z"
+                            />
+                            <path
+                              d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"
+                            />
+                          </g></svg></span
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="flex items-center py-2 text-sm text-gray-500 dark:text-white"
+                      >1.2M Views
+                      <span id="icon-blog" class="inline-block pl-3"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                          role="img"
+                          style="vertical-align: -0.125em"
+                          width="30"
+                          height="30"
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 1024 1024"
+                        >
+                          <path
+                            fill="black"
+                            d="M396 512a112 112 0 1 0 224 0a112 112 0 1 0-224 0zm546.2-25.8C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 0 0 0 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3c7.7-16.2 7.7-35 0-51.5zM508 688c-97.2 0-176-78.8-176-176s78.8-176 176-176s176 78.8 176 176s-78.8 176-176 176z"
+                          /></svg></span
+                    ></a>
+                  </li>
+                  <li class="">
+                    <a
+                      href="#"
+                      class="flex items-center py-2 text-sm text-gray-500 dark:text-white"
+                      >06 Comments
+                      <span id="icon-blog" class="inline-block pl-3"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                          role="img"
+                          style="vertical-align: -0.125em"
+                          width="30"
+                          height="30"
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 512 512"
+                        >
+                          <path
+                            fill="black"
+                            d="M256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2l-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29c7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1l-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160s-93.3 160-208 160z"
+                          /></svg></span
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="right basis-2/3 px-4 py-3">
+                <figure class="mb-2 max-w-lg">
+                  <img src="dist/image/blog1.jpg" alt="" />
+                </figure>
+                <h2
+                  class="mb-4 text-2xl font-bold dark:hover:text-primary hover:text-primary dark:text-white"
+                >
+                  <a href="">Astronomy Binoculars A Great Alternative</a>
+                </h2>
+                <p class="mb-7 dark:text-white">
+                  MCSE boot camps have its supporters and its detractors. Some
+                  people do not understand why you should have to spend money on
+                  boot camp when you can get the MCSE study materials yourself
+                  at a fraction.
+                </p>
+                <button
+                  class="h-10 w-40 rounded-md bg-primary text-white hover:border-2 hover:border-primary hover:bg-inherit hover:text-black dark:text-white dark:hover:text-white"
+                >
+                  View More
+                </button>
+              </div>
+            </article>
+            <article
+            class="mb-5 flex max-h-max flex-col md:flex-row lg:flex-row"
+          >
+            <div class="left basis-1/4 px-4 text-left">
+              <div class="pb-9 dark:text-white">
+                <a href="#">Food,</a>
+                <a class="active" href="#">Technology,</a>
+                <a href="#">Politics,</a>
+                <a href="#">Lifestyle</a>
+              </div>
+              <ul class="blog_meta list">
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center py-2 text-sm text-gray-500 dark:text-white"
+                    >Mark wiens
+                    <span id="icon-blog" class="inline-block pl-3"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                        role="img"
+                        style="vertical-align: -0.125em"
+                        width="30"
+                        height="30"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 1024 1024"
+                      >
+                        <path
+                          fill="black"
+                          d="M858.5 763.6a374 374 0 0 0-80.6-119.5a375.63 375.63 0 0 0-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1c-.4.2-.8.3-1.2.5c-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 0 0-80.6 119.5A371.7 371.7 0 0 0 136 901.8a8 8 0 0 0 8 8.2h60c4.4 0 7.9-3.5 8-7.8c2-77.2 33-149.5 87.8-204.3c56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 0 0 8-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z"
+                        /></svg></span
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center py-2 text-sm text-gray-500 dark:text-white"
+                    >12 Dec, 2017
+                    <span id="icon-blog" class="inline-block pl-3"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                        role="img"
+                        style="vertical-align: -0.125em"
+                        width="30"
+                        height="30"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                      >
+                        <g fill="black">
+                          <path
+                            d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406c1.258 0 2-1.066 2-2.871c0-1.934-.781-2.668-1.953-2.668c-.926 0-1.797.672-1.797 1.809c0 1.16.824 1.77 1.676 1.77c.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164c-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18c-.601 0-1.144-.383-1.144-1.2c0-.823.582-1.21 1.168-1.21c.633 0 1.16.398 1.16 1.23z"
+                          />
+                          <path
+                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"
+                          />
+                        </g></svg></span
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center py-2 text-sm text-gray-500 dark:text-white"
+                    >1.2M Views
+                    <span id="icon-blog" class="inline-block pl-3"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                        role="img"
+                        style="vertical-align: -0.125em"
+                        width="30"
+                        height="30"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 1024 1024"
+                      >
+                        <path
+                          fill="black"
+                          d="M396 512a112 112 0 1 0 224 0a112 112 0 1 0-224 0zm546.2-25.8C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 0 0 0 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3c7.7-16.2 7.7-35 0-51.5zM508 688c-97.2 0-176-78.8-176-176s78.8-176 176-176s176 78.8 176 176s-78.8 176-176 176z"
+                        /></svg></span
+                  ></a>
+                </li>
+                <li class="">
+                  <a
+                    href="#"
+                    class="flex items-center py-2 text-sm text-gray-500 dark:text-white"
+                    >06 Comments
+                    <span id="icon-blog" class="inline-block pl-3"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                        role="img"
+                        style="vertical-align: -0.125em"
+                        width="30"
+                        height="30"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 512 512"
+                      >
+                        <path
+                          fill="black"
+                          d="M256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2l-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29c7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1l-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160s-93.3 160-208 160z"
+                        /></svg></span
+                  ></a>
+                </li>
+              </ul>
+            </div>
+            <div class="right basis-2/3 px-4 py-3">
+              <figure class="mb-2 max-w-lg">
+                <img src="dist/image/blog2.png" alt="" />
+              </figure>
+              <h2
+                class="mb-4 text-2xl font-bold dark:hover:text-primary hover:text-primary dark:text-white"
+              >
+                <a href="">Astronomy Binoculars A Great Alternative</a>
+              </h2>
+              <p class="mb-7 dark:text-white">
+                MCSE boot camps have its supporters and its detractors. Some
+                people do not understand why you should have to spend money on
+                boot camp when you can get the MCSE study materials yourself
+                at a fraction.
+              </p>
+              <button
+                class="h-10 w-40 rounded-md bg-primary text-white hover:border-2 hover:border-primary hover:bg-inherit hover:text-black dark:text-white dark:hover:text-white"
+              >
+                View More
+              </button>
+            </div>
+          </article>
+          </div>
+        </section>
+        <div class="pagination mx-auto mt-2 w-2/3 pb-8 md:w-1/3 lg:w-1/3">
+          <ul class="flex flex-row justify-between">
+            <li class="group flex h-10 basis-1/12 items-center justify-center">
+              <a href=""
+                ><span class="dark:text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    role="img"
+                    width="30"
+                    height="30"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="none"
+                      stroke="#0F62FE"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m11 5l-7 7l7 7m-7-7h16"
+                    />
+                  </svg> </span
+              ></a>
+            </li>
+            <li
+              class="paginate-active flex h-10 basis-1/12 cursor-pointer items-center justify-center"
+            >
+              <a href="">1</a>
+            </li>
+            <li
+              class="flex h-10 basis-1/12 cursor-pointer items-center justify-center hover:text-white dark:text-white hover:bg-primary "
+            >
+              <a href="">2</a>
+            </li>
+            <li
+              class="flex h-10 basis-1/12 cursor-pointer items-center justify-center dark:text-white hover:bg-primary hover:text-white"
+            >
+              <a href="">3</a>
+            </li>
+            <li
+              class="flex h-10 basis-1/12 cursor-pointer items-center justify-center hover:text-white dark:text-white"
+            >
+              <a href=""
+                ><span
+                  class="iconify"
+                  data-icon="akar-icons:arrow-right"
+                  style="color: #0f62fe"
+                  data-width="30"
+                  data-height="30"
+                ></span
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- blog Section End -->
+
+    <!-- Footer -->
+    <footer class="bg-dark pt-24 pb-12">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div class="mb-12 w-full px-4 font-medium text-slate-300 md:w-1/3">
+            <h2 class="mb-5 text-3xl font-bold text-white">Kusena Dev</h2>
+            <h3 class="mb-2 text-2xl font-bold">Hubungi Saya</h3>
+            <p>kusena322@gmail.com</p>
+            <p>Banyuwangi</p>
+          </div>
+          <div class="mb-12 w-full px-4 md:w-1/3">
+            <h3 class="mb-5 text-2xl font-semibold text-white">
+              Kategori Tulisan
+            </h3>
+            <ul class="text-slate-300">
+              <li>
+                <a
+                  href=""
+                  class="mb-3 inline-block text-base hover:text-primary"
+                  >Html</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="mb-3 inline-block text-base hover:text-primary"
+                  >Css</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="mb-3 inline-block text-base hover:text-primary"
+                  >Javascript</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="mb-3 inline-block text-base hover:text-primary"
+                  >React JS</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="mb-12 w-full px-4 md:w-1/3">
+            <h3 class="mb-5 text-2xl font-semibold text-white">Tautan</h3>
+            <ul class="text-slate-300">
+              <li>
+                <a
+                  href=""
+                  class="mb-3 inline-block text-base hover:text-primary"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="mb-3 inline-block text-base hover:text-primary"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="mb-3 inline-block text-base hover:text-primary"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="mb-3 inline-block text-base hover:text-primary"
+                  >Portfolio</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="w-full border-t border-slate-700 pt-10">
+          <div class="mb-5 flex flex-wrap items-center justify-center">
+            <!-- youtube -->
+            <a
+              href=""
+              class="hover mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-400 text-slate-400 hover:border-primary hover:bg-primary hover:text-white"
+              ><svg
+                class="fill-current"
+                width="20"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>YouTube</title>
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
+            </a>
+            <!-- instagram -->
+            <a
+              href=""
+              class="hover mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-400 text-slate-400 hover:border-primary hover:bg-primary hover:text-white"
+              ><svg
+                class="fill-current"
+                width="20"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>YouTube</title>
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
+            </a>
+            <!-- facebook -->
+            <a
+              href=""
+              class="hover mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-400 text-slate-400 hover:border-primary hover:bg-primary hover:text-white"
+              ><svg
+                class="fill-current"
+                width="20"
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>YouTube</title>
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
+            </a>
+          </div>
+          <p class="text-center text-sm font-medium text-slate-500">
+            Dibuat dengan <span class="text-red-600">❤</span> Oleh
+            <a
+              href="https://instagram.com/kusena01"
+              target="_blank"
+              class="font-bold text-primary"
+              >KusenaDev</a
+            >
+            Menggunakan
+            <a
+              href="https://tailwindcss.com/"
+              target="_blank"
+              class="font-bold text-sky-500"
+              >Tailwind CSS</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Back To Top -->
+    <a
+      href="#home"
+      class="fixed bottom-4 right-5 z-[9999] hidden h-14 w-14 items-center justify-center rounded-full bg-primary p-4 hover:animate-pulse"
+      id="to-top"
+    >
+      <span class="mt-2 block h-5 w-5 rotate-45 border-t-2 border-l-2"></span
+    ></a>
+    <!-- Back To Top -->
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script src="dist/script.js"></script>
+  </body>
+</html>
